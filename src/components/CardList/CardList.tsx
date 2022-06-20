@@ -1,6 +1,6 @@
 import Card from "../Card/Card";
 import TEXT from "../../constants/text";
-import CardsData from "../../data/cards.json";
+import cardsData from "../../data/cards.json";
 import "./CardList.scss";
 
 const CardList = () => {
@@ -8,7 +8,7 @@ const CardList = () => {
     <div className="card-list">
       <h1 className="card-list__header">{TEXT.TITLE}</h1>
       <div className="card-list__cards">
-        {CardsData?.map(data => <Card key={data.taste} data={data}/>)}
+        {cardsData?.map(data => <Card key={data.taste} data={data}/>)}
       </div>
     </div>
   );
