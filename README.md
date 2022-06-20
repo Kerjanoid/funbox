@@ -1,4 +1,6 @@
 # Квалификационные задания для разработчиков HTML/CSS/JS
+1. [Level 1](https://github.com/Kerjanoid/funbox/wiki/Level-1)
+2. [Level 2](https://kerjanoid.github.io/funbox/)
 
 ### Использованные технологии:
 1. React.js (CRA)
