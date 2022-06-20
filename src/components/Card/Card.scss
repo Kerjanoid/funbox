@@ -10,6 +10,7 @@ $bg-outer-is-over: linear-gradient(135deg,transparent,transparent 29.92px,$is-ov
 $bg-outer-is-selected: linear-gradient(135deg,transparent,transparent 29.92px,$selected-color 29.92px,$selected-color);
 $bg-outer-is-selected-hover: linear-gradient(135deg,transparent,transparent 29.92px,$selected-color-hover 29.92px,$selected-color-hover);
 $bg-inner: linear-gradient(135deg,transparent,transparent 28.56px,$card-inner-color 28.56px,$card-inner-color);
+$mobile: 500px;
 
 @mixin is-over-style {
   mix-blend-mode: normal;
@@ -23,6 +24,11 @@ $bg-inner: linear-gradient(135deg,transparent,transparent 28.56px,$card-inner-co
   font-style: normal;
   font-weight: 400;
   color: #FFFFFF;
+  margin: 0 40px 40px 40px;
+
+  @media (max-width: $mobile) {
+    margin: 0 auto 40px auto;
+  }
 
   &__outer {
     width: 320px;
