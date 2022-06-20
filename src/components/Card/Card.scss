@@ -1,0 +1,214 @@
+$is-over-color: #B3B3B3;
+$not-selected-color: #1698D9;
+$not-selected-color-hover: #2EA8E6;
+$selected-color: #D91667;
+$selected-color-hover: #E52E7A;
+$card-inner-color: #F2F2F2;
+$bg-outer: linear-gradient(135deg,transparent,transparent 29.92px,$not-selected-color 29.92px,$not-selected-color);
+$bg-outer-hover: linear-gradient(135deg,transparent,transparent 29.92px,$not-selected-color-hover 29.92px,$not-selected-color-hover);
+$bg-outer-is-over: linear-gradient(135deg,transparent,transparent 29.92px,$is-over-color 29.92px,$is-over-color);
+$bg-outer-is-selected: linear-gradient(135deg,transparent,transparent 29.92px,$selected-color 29.92px,$selected-color);
+$bg-outer-is-selected-hover: linear-gradient(135deg,transparent,transparent 29.92px,$selected-color-hover 29.92px,$selected-color-hover);
+$bg-inner: linear-gradient(135deg,transparent,transparent 28.56px,$card-inner-color 28.56px,$card-inner-color);
+
+@mixin is-over-style {
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.card {
+  max-width: 320px;
+  max-height: 509px;
+  font-family: 'Trebuchet MS';
+  font-style: normal;
+  font-weight: 400;
+  color: #FFFFFF;
+
+  &__outer {
+    width: 320px;
+    height: 480px;
+    padding: 4px;
+    background: $bg-outer;
+    border-radius: 12px;
+    cursor: pointer;
+
+    &:hover {
+      background: $bg-outer-hover;
+    }
+
+    &_is-over {
+      background: $bg-outer-is-over;
+      cursor: default;
+
+      &:hover {
+        background: $bg-outer-is-over;
+      }
+    }
+
+    &_is-selected {
+      background: $bg-outer-is-selected;
+
+      &:hover {
+        background: $bg-outer-is-selected-hover;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    height: 100%;
+    background: $bg-inner;
+    border-radius: 8px;
+    padding: 17px 0 0 47px;
+    overflow: hidden
+  }
+
+  &__caption {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+
+    &_is-over {
+      color: #FFFF66;
+    }
+  }
+
+  &__caption-link {
+    font: inherit;
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+    color: $not-selected-color;
+    text-decoration: underline dashed;
+    cursor: pointer;
+
+    &:hover {
+      color: #22A7E9;
+    }
+  }
+
+  &__caption-dot {
+    font-weight: 700;
+    color: $not-selected-color;
+
+    :hover > & {
+      color:#22A7E9;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 19px;
+    color: #666666;
+    margin-bottom: 5px;
+
+    &_is-over {
+      color: $is-over-color;
+      @include is-over-style;
+    }
+
+    &_is-selected {
+      color: #E62E7A;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #000000;
+    margin-left:  -3px;
+
+    &_is-over {
+      color: $is-over-color;
+      @include is-over-style;
+    }
+  }
+
+  &__taste {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 15px;
+
+    &_is-over {
+      color: $is-over-color;
+      @include is-over-style;
+    }
+  }
+
+  &__extra-list {
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+
+    &_is-over {
+      color: $is-over-color;
+      @include is-over-style;
+    }
+  }
+
+  &__extra-item {
+    list-style-type: none;
+  }
+
+  &__weight {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    bottom: 12px;
+    right: 12px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: $not-selected-color;
+    z-index: 1;
+
+    :hover > & {
+      background: $not-selected-color-hover;
+    }
+
+    &_is-over {
+      background: $is-over-color;
+
+      :hover > & {
+        background: $is-over-color;
+      }
+    }
+
+    &_is-selected {
+      background: $selected-color;
+
+      :hover > & {
+        background: $selected-color-hover;
+      }
+    }
+  }
+
+  &__weight-number {
+    font-size: 42px;
+    line-height: 22px;
+    text-align: center;
+    margin: 20px 0 8px;
+  }
+
+  &__weight-unit {
+    font-size: 21px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  &__image {
+    position: absolute;
+    top: 204px;
+    left: -28px;
+
+    &_is-over {
+      @include is-over-style;
+    }
+  }
+}

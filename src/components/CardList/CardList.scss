@@ -1,0 +1,21 @@
+.card-list {
+  margin: auto;
+
+  &__header {
+    font-family: "Exo2.0-Thin";
+    font-weight: 100;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 1px 1px #000000;
+    margin-bottom: 25px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    justify-items: center;
+  }
+}
