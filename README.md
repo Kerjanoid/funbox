@@ -13,4 +13,4 @@
 4. Запустить проект локально http://localhost:3000/ - ```npm start```
 5. Сборка проекта - ```npm run build```
 
-### :link: [ссылка на проект на GitPages](https://kerjanoid.github.io/funbox)
+### :link: [ссылка на проект на GitPages](https://kerjanoid.github.io/funbox/)
