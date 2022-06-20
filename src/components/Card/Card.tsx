@@ -73,6 +73,7 @@ const Card: React.FC<ICardProps> = ({ data }) => {
           >
             {data.extra.map((item) => (
               <li
+                key={item}
                 className="card__extra-item"
                 dangerouslySetInnerHTML={{ __html: item }}
               />

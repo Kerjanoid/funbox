@@ -8,7 +8,7 @@ const CardList = () => {
     <div className="card-list">
       <h1 className="card-list__header">{TEXT.TITLE}</h1>
       <div className="card-list__cards">
-        {CardsData?.map(data => <Card data={data}/>)}
+        {CardsData?.map(data => <Card key={data.taste} data={data}/>)}
       </div>
     </div>
   );
