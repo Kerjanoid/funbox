@@ -35,8 +35,8 @@ const Card: React.FC<ICardProps> = ({ data }) => {
   return (
     <article className="card">
       <div
-        className={`card__outer ${!data.in_stock && "card__outer_is-over"} ${
-          isSelected && "card__outer_is-selected"
+        className={`card__outer ${!data.in_stock ? "card__outer_is-over" : ""} ${
+          isSelected ? "card__outer_is-selected"  : ""
         }`}
         onClick={select}
         onMouseEnter={onMouseEnterHandler}
@@ -50,25 +50,25 @@ const Card: React.FC<ICardProps> = ({ data }) => {
           ) : (
             <p
               className={`card__description ${
-                !data.in_stock && "card__description_is-over"
+                !data.in_stock ? "card__description_is-over" : ""
               }`}
             >
               {TEXT.CARD_DESCRIPTION}
             </p>
           )}
           <h2
-            className={`card__title ${!data.in_stock && "card__title_is-over"}`}
+            className={`card__title ${!data.in_stock ? "card__title_is-over" : ""}`}
           >
             {TEXT.CARD_TITLE}
           </h2>
           <p
-            className={`card__taste ${!data.in_stock && "card__taste_is-over"}`}
+            className={`card__taste ${!data.in_stock ? "card__taste_is-over" : ""}`}
           >
             {data.taste}
           </p>
           <ul
             className={`card__extra-list ${
-              !data.in_stock && "card__extra-list_is-over"
+              !data.in_stock ? "card__extra-list_is-over" : ""
             }`}
           >
             {data.extra.map((item) => (
@@ -81,15 +81,15 @@ const Card: React.FC<ICardProps> = ({ data }) => {
           </ul>
           <div
             className={`card__weight ${
-              !data.in_stock && "card__weight_is-over"
-            } ${isSelected && "card__weight_is-selected"}`}
+              !data.in_stock ? "card__weight_is-over" : ""
+            } ${isSelected ? "card__weight_is-selected" : ""}`}
           >
             <p className="card__weight-number">{data.weight}</p>
             <p className="card__weight-unit">{TEXT.UNIT}</p>
           </div>
           <img
             src={cat}
-            className={`card__image ${!data.in_stock && "card__image_is-over"}`}
+            className={`card__image ${!data.in_stock ? "card__image_is-over" : ""}`}
             alt="cat"
           />
         </div>
