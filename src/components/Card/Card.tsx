@@ -33,7 +33,7 @@ const Card: React.FC<ICardProps> = ({ data }) => {
   };
 
   return (
-    <article className="card">
+    <article className="card card-list__item">
       <div
         className={`card__outer ${!data.in_stock ? "card__outer_is-over" : ""} ${
           isSelected ? "card__outer_is-selected"  : ""
